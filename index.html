@@ -73,7 +73,7 @@
 
         <button onclick="submitForm()">確認登記</button>
         <!--<button onclick="clearAllData()" style="background-color: red;">清除所有登記</button> -->
-        <button onclick="clearAllData()" style="background-color: red;">清除所有登記</button>
+        
         
        
     </div>
@@ -281,28 +281,15 @@ function clearAllData() {
     alert("所有登記資料已清除！");
 }
 */
-function clearAllData() {
-    // 清空 stationData 內所有學號陣列
-    for (let tripType in stationData) {
-        for (let station in stationData[tripType]) {
-            stationData[tripType][station] = [];
-        }
-    }
 
-    // 清除 localStorage 內的數據
-    localStorage.removeItem("stationData");
-
-    // 更新畫面顯示
-    updateStationList("離營");
-    updateStationList("回營");
-
-    alert("所有登記資料已清除！");
-}
 /*window.onload = function () {
     updateStationList("離營");
     updateStationList("回營");
 };*/
-
+window.onload = function () {
+    updateStationList("離營");
+    updateStationList("回營");
+};
 
 </script>
 
